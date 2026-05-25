@@ -1,0 +1,153 @@
+---
+import "../styles/global.css";
+
+const projects = [
+  {
+    kicker: "Platform",
+    title: "ai4health",
+    href: "/ai4health/",
+    desc: "公共卫生监测预警平台主仓，承载完整前端、业务闭环和长期产品演进。",
+    tags: ["monitoring", "warning", "decision support"]
+  },
+  {
+    kicker: "Lite",
+    title: "ai4health single",
+    href: "/ai4health/single/",
+    desc: "单页精简版，面向快速演示、现场值班和低依赖公开展示。",
+    tags: ["single page", "public dashboard", "RIDs"]
+  },
+  {
+    kicker: "Backend",
+    title: "AI Lab",
+    href: "/api/health",
+    desc: "时间序列分析、预测、异常检测和公开 API 后端，服务 ai4health 的模型闭环。",
+    tags: ["forecasting", "alerts", "API"]
+  }
+];
+
+const routes = [
+  ["/", "个人主页和项目入口", "CNalks/cnalks.cn"],
+  ["/ai4health/", "完整监测预警平台", "CNalks/ai4health"],
+  ["/ai4health/single/", "单页精简版公共展示", "CNalks/ai4health"],
+  ["/api/*", "AI Lab 公开 API 代理", "CNalks/AI_lab"]
+];
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="CNalks personal homepage and AI for public health project directory." />
+    <link rel="icon" href="/favicon.svg" />
+    <title>CNalks | 公共卫生数据与 AI 工程</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="shell topbar-inner">
+          <a class="brand" href="/">
+            <span class="brand-mark">C</span>
+            <span>CNalks</span>
+          </a>
+          <nav class="nav" aria-label="主导航">
+            <a href="#projects">项目</a>
+            <a href="#routes">部署关系</a>
+            <a href="https://github.com/CNalks">GitHub</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="shell hero">
+          <div>
+            <div class="eyebrow">public health data · time series · AI engineering</div>
+            <h1>林智剑<br />CNalks</h1>
+            <p class="hero-copy">
+              这里是我的个人主页，也是 ai4health 和 AI Lab 的公开入口。当前重点是公共卫生监测、
+              流行病学时间序列、预测预警模型，以及把模型结果可靠地落到可解释的值班工作流里。
+            </p>
+            <div class="hero-actions">
+              <a class="primary-action" href="/ai4health/">进入 ai4health</a>
+              <a class="secondary-action" href="/ai4health/single/">单页精简版</a>
+              <a class="secondary-action" href="/api/health">API health</a>
+            </div>
+          </div>
+
+          <aside class="identity-panel" aria-label="身份卡片">
+            <div class="portrait-row">
+              <img class="avatar" src="https://github.com/CNalks.png" alt="CNalks GitHub avatar" />
+              <div>
+                <h2>公共卫生数据系统</h2>
+                <p>从数据接入、风险评分、短期趋势参考到异常信号解释，保持工程路径和流行病学解释一致。</p>
+              </div>
+            </div>
+            <div class="signal-grid">
+              <div class="signal">
+                <strong>AI Lab</strong>
+                <span>预测与预警后端</span>
+              </div>
+              <div class="signal">
+                <strong>RIDs</strong>
+                <span>真实数据源接入</span>
+              </div>
+              <div class="signal">
+                <strong>Single</strong>
+                <span>单页精简展示</span>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section id="projects" class="shell section">
+          <div class="section-title">
+            <div>
+              <h2>项目入口</h2>
+              <p>cnalks.cn 只做入口和说明，不把各项目的部署细节混成一个仓库。真实功能仍由对应仓库负责。</p>
+            </div>
+            <a class="pill-link" href="https://github.com/CNalks">查看组织</a>
+          </div>
+
+          <div class="project-grid">
+            {projects.map((project) => (
+              <a class="project-card" href={project.href}>
+                <div>
+                  <div class="kicker">{project.kicker}</div>
+                  <h3>{project.title}</h3>
+                  <p>{project.desc}</p>
+                </div>
+                <div class="tags">
+                  {project.tags.map((tag) => <span>{tag}</span>)}
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section id="routes" class="shell section">
+          <div class="section-title">
+            <div>
+              <h2>部署关系</h2>
+              <p>根路径、平台前端、单页精简版和 API 代理分开治理，避免静态主页覆盖线上业务路径。</p>
+            </div>
+            <a class="pill-link" href="/PROJECT_MAP.md">PROJECT_MAP</a>
+          </div>
+
+          <div class="route-table" role="table" aria-label="部署关系表">
+            {routes.map(([path, purpose, owner]) => (
+              <div class="route-row" role="row">
+                <div role="cell">{path}</div>
+                <div role="cell">{purpose}</div>
+                <div role="cell">{owner}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="shell">© 2026 CNalks. Root site only; ai4health and API routes stay owned by their project repositories.</div>
+      </footer>
+    </div>
+  </body>
+</html>
