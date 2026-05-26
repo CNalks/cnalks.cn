@@ -22,6 +22,13 @@ const projects = [
     href: "/api/v1/health",
     desc: "时间序列分析、预测、异常检测和公开 API 后端，服务 ai4health 的模型闭环。",
     tags: ["forecasting", "alerts", "API"]
+  },
+  {
+    kicker: "Study",
+    title: "Siming weekly signals",
+    href: "/siming-alerts/",
+    desc: "思明区学校预警信号按周聚合、序列诊断、五模型短期实验和 AI_lab 接口探针结果。",
+    tags: ["weekly series", "model test", "Siming"]
   }
 ];
 
@@ -53,6 +60,7 @@ const routes = [
           <nav class="nav" aria-label="主导航">
             <a href="#projects">项目</a>
             <a href="#routes">部署关系</a>
+            <a href="/siming-alerts/">序列分析</a>
             <a href="https://github.com/CNalks">GitHub</a>
           </nav>
         </div>
@@ -70,6 +78,7 @@ const routes = [
             <div class="hero-actions">
               <a class="primary-action" href="/ai4health/">进入 ai4health</a>
               <a class="secondary-action" href="/ai4health/single/">单页精简版</a>
+              <a class="secondary-action" href="/siming-alerts/">序列分析</a>
               <a class="secondary-action" href="/api/v1/health">API health</a>
             </div>
           </div>

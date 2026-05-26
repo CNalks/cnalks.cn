@@ -1,0 +1,2156 @@
+{
+  "title": "思明区学校预警信号周序列分析",
+  "generated_at": "2026-05-26T17:05:13.606600+08:00",
+  "source": {
+    "workbook": "思明疾控-20260415_处理结果.xlsx",
+    "sheet": "处理结果",
+    "date_column": "生成日期",
+    "date_min": "2025-02-19",
+    "date_max": "2026-02-05",
+    "week_min": "2025-02-17",
+    "week_max": "2026-02-02"
+  },
+  "summary": {
+    "records": 3508,
+    "weeks": 51,
+    "series_count": 112,
+    "series_by_scope": {
+      "community": 101,
+      "district": 1,
+      "street": 10
+    },
+    "forecast_eligible_count": 62,
+    "forecast_eligible_by_scope": {
+      "community": 51,
+      "district": 1,
+      "street": 10
+    },
+    "candidate_models": [
+      "naive_last",
+      "moving_average_4",
+      "damped_trend",
+      "croston_sba",
+      "poisson_harmonic"
+    ],
+    "horizon_weeks": 2
+  },
+  "limitations": [
+    "当前 Excel 只有生成日期，没有发病日期或报告日期，因此这里分析的是预警信号生成节律，不等同于病例发生流行曲线。",
+    "数据跨度约 51 周，不足两个完整年度周期；年度季节性只能标注为线索，不能作为正式季节模型证据。",
+    "AI_lab 通用预测接口已通过创建、写点、训练测试；预测运行因 60 点门槛返回 insufficient data，本页使用本地批量实验结果展示。"
+  ],
+  "district": {
+    "analysis": {
+      "series_id": "district",
+      "scope": "district",
+      "street": "",
+      "community": "",
+      "name": "思明区",
+      "total": 3508,
+      "nonzero_weeks": 46,
+      "zero_ratio": 0.098,
+      "series_type": "continuous_volume",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "poisson_harmonic",
+      "mae": 57.793,
+      "rmse": 90.074,
+      "smape": 0.669,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 3.7,
+          "count": 4
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.87,
+          "count": 2
+        }
+      ]
+    },
+    "weekly": [
+      {
+        "week_start": "2025-02-17",
+        "iso_week": "2025-W08",
+        "count": 15
+      },
+      {
+        "week_start": "2025-02-24",
+        "iso_week": "2025-W09",
+        "count": 43
+      },
+      {
+        "week_start": "2025-03-03",
+        "iso_week": "2025-W10",
+        "count": 21
+      },
+      {
+        "week_start": "2025-03-10",
+        "iso_week": "2025-W11",
+        "count": 20
+      },
+      {
+        "week_start": "2025-03-17",
+        "iso_week": "2025-W12",
+        "count": 6
+      },
+      {
+        "week_start": "2025-03-24",
+        "iso_week": "2025-W13",
+        "count": 12
+      },
+      {
+        "week_start": "2025-03-31",
+        "iso_week": "2025-W14",
+        "count": 1
+      },
+      {
+        "week_start": "2025-04-07",
+        "iso_week": "2025-W15",
+        "count": 2
+      },
+      {
+        "week_start": "2025-04-14",
+        "iso_week": "2025-W16",
+        "count": 1
+      },
+      {
+        "week_start": "2025-04-21",
+        "iso_week": "2025-W17",
+        "count": 10
+      },
+      {
+        "week_start": "2025-04-28",
+        "iso_week": "2025-W18",
+        "count": 4
+      },
+      {
+        "week_start": "2025-05-05",
+        "iso_week": "2025-W19",
+        "count": 3
+      },
+      {
+        "week_start": "2025-05-12",
+        "iso_week": "2025-W20",
+        "count": 2
+      },
+      {
+        "week_start": "2025-05-19",
+        "iso_week": "2025-W21",
+        "count": 3
+      },
+      {
+        "week_start": "2025-05-26",
+        "iso_week": "2025-W22",
+        "count": 3
+      },
+      {
+        "week_start": "2025-06-02",
+        "iso_week": "2025-W23",
+        "count": 2
+      },
+      {
+        "week_start": "2025-06-09",
+        "iso_week": "2025-W24",
+        "count": 5
+      },
+      {
+        "week_start": "2025-06-16",
+        "iso_week": "2025-W25",
+        "count": 4
+      },
+      {
+        "week_start": "2025-06-23",
+        "iso_week": "2025-W26",
+        "count": 8
+      },
+      {
+        "week_start": "2025-06-30",
+        "iso_week": "2025-W27",
+        "count": 9
+      },
+      {
+        "week_start": "2025-07-07",
+        "iso_week": "2025-W28",
+        "count": 4
+      },
+      {
+        "week_start": "2025-07-14",
+        "iso_week": "2025-W29",
+        "count": 0
+      },
+      {
+        "week_start": "2025-07-21",
+        "iso_week": "2025-W30",
+        "count": 0
+      },
+      {
+        "week_start": "2025-07-28",
+        "iso_week": "2025-W31",
+        "count": 0
+      },
+      {
+        "week_start": "2025-08-04",
+        "iso_week": "2025-W32",
+        "count": 1
+      },
+      {
+        "week_start": "2025-08-11",
+        "iso_week": "2025-W33",
+        "count": 0
+      },
+      {
+        "week_start": "2025-08-18",
+        "iso_week": "2025-W34",
+        "count": 1
+      },
+      {
+        "week_start": "2025-08-25",
+        "iso_week": "2025-W35",
+        "count": 0
+      },
+      {
+        "week_start": "2025-09-01",
+        "iso_week": "2025-W36",
+        "count": 2
+      },
+      {
+        "week_start": "2025-09-08",
+        "iso_week": "2025-W37",
+        "count": 20
+      },
+      {
+        "week_start": "2025-09-15",
+        "iso_week": "2025-W38",
+        "count": 31
+      },
+      {
+        "week_start": "2025-09-22",
+        "iso_week": "2025-W39",
+        "count": 51
+      },
+      {
+        "week_start": "2025-09-29",
+        "iso_week": "2025-W40",
+        "count": 16
+      },
+      {
+        "week_start": "2025-10-06",
+        "iso_week": "2025-W41",
+        "count": 18
+      },
+      {
+        "week_start": "2025-10-13",
+        "iso_week": "2025-W42",
+        "count": 65
+      },
+      {
+        "week_start": "2025-10-20",
+        "iso_week": "2025-W43",
+        "count": 101
+      },
+      {
+        "week_start": "2025-10-27",
+        "iso_week": "2025-W44",
+        "count": 139
+      },
+      {
+        "week_start": "2025-11-03",
+        "iso_week": "2025-W45",
+        "count": 201
+      },
+      {
+        "week_start": "2025-11-10",
+        "iso_week": "2025-W46",
+        "count": 280
+      },
+      {
+        "week_start": "2025-11-17",
+        "iso_week": "2025-W47",
+        "count": 411
+      },
+      {
+        "week_start": "2025-11-24",
+        "iso_week": "2025-W48",
+        "count": 615
+      },
+      {
+        "week_start": "2025-12-01",
+        "iso_week": "2025-W49",
+        "count": 597
+      },
+      {
+        "week_start": "2025-12-08",
+        "iso_week": "2025-W50",
+        "count": 350
+      },
+      {
+        "week_start": "2025-12-15",
+        "iso_week": "2025-W51",
+        "count": 127
+      },
+      {
+        "week_start": "2025-12-22",
+        "iso_week": "2025-W52",
+        "count": 86
+      },
+      {
+        "week_start": "2025-12-29",
+        "iso_week": "2026-W01",
+        "count": 60
+      },
+      {
+        "week_start": "2026-01-05",
+        "iso_week": "2026-W02",
+        "count": 31
+      },
+      {
+        "week_start": "2026-01-12",
+        "iso_week": "2026-W03",
+        "count": 61
+      },
+      {
+        "week_start": "2026-01-19",
+        "iso_week": "2026-W04",
+        "count": 40
+      },
+      {
+        "week_start": "2026-01-26",
+        "iso_week": "2026-W05",
+        "count": 19
+      },
+      {
+        "week_start": "2026-02-02",
+        "iso_week": "2026-W06",
+        "count": 7
+      }
+    ]
+  },
+  "streets": [
+    {
+      "series_id": "street|筼筜街道",
+      "scope": "street",
+      "street": "筼筜街道",
+      "community": "",
+      "name": "筼筜街道",
+      "total": 843,
+      "nonzero_weeks": 36,
+      "zero_ratio": 0.294,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 25.125,
+      "rmse": 38.918,
+      "smape": 0.866,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 2.0,
+          "count": 2
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 2.0,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "series_id": "street|莲前街道",
+      "scope": "street",
+      "street": "莲前街道",
+      "community": "",
+      "name": "莲前街道",
+      "total": 745,
+      "nonzero_weeks": 35,
+      "zero_ratio": 0.314,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 21.5,
+      "rmse": 38.085,
+      "smape": 0.765,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.0,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.0,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "street|嘉莲街道",
+      "scope": "street",
+      "street": "嘉莲街道",
+      "community": "",
+      "name": "嘉莲街道",
+      "total": 538,
+      "nonzero_weeks": 35,
+      "zero_ratio": 0.314,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 17.312,
+      "rmse": 29.055,
+      "smape": 0.854,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 2.0,
+          "count": 2
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 2.0,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "series_id": "street|开元街道",
+      "scope": "street",
+      "street": "开元街道",
+      "community": "",
+      "name": "开元街道",
+      "total": 412,
+      "nonzero_weeks": 26,
+      "zero_ratio": 0.49,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 10.792,
+      "rmse": 11.364,
+      "smape": 0.882,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 12.68,
+          "count": 13
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 12.68,
+          "count": 13
+        }
+      ]
+    },
+    {
+      "series_id": "street|梧村街道",
+      "scope": "street",
+      "street": "梧村街道",
+      "community": "",
+      "name": "梧村街道",
+      "total": 255,
+      "nonzero_weeks": 30,
+      "zero_ratio": 0.412,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 8.125,
+      "rmse": 14.586,
+      "smape": 0.92,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.0,
+          "count": 0
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.0,
+          "count": 0
+        }
+      ]
+    },
+    {
+      "series_id": "street|中华街道",
+      "scope": "street",
+      "street": "中华街道",
+      "community": "",
+      "name": "中华街道",
+      "total": 223,
+      "nonzero_weeks": 21,
+      "zero_ratio": 0.588,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 4.25,
+      "rmse": 5.755,
+      "smape": 0.783,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.0,
+          "count": 0
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.0,
+          "count": 0
+        }
+      ]
+    },
+    {
+      "series_id": "street|鹭江街道",
+      "scope": "street",
+      "street": "鹭江街道",
+      "community": "",
+      "name": "鹭江街道",
+      "total": 174,
+      "nonzero_weeks": 31,
+      "zero_ratio": 0.392,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 4.631,
+      "rmse": 5.07,
+      "smape": 0.889,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 4.83,
+          "count": 5
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 4.83,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "series_id": "street|厦港街道",
+      "scope": "street",
+      "street": "厦港街道",
+      "community": "",
+      "name": "厦港街道",
+      "total": 158,
+      "nonzero_weeks": 24,
+      "zero_ratio": 0.529,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 5.062,
+      "rmse": 6.75,
+      "smape": 0.848,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.0,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.0,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "street|滨海街道",
+      "scope": "street",
+      "street": "滨海街道",
+      "community": "",
+      "name": "滨海街道",
+      "total": 100,
+      "nonzero_weeks": 20,
+      "zero_ratio": 0.608,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 2.842,
+      "rmse": 3.077,
+      "smape": 1.094,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 3.46,
+          "count": 3
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 3.46,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "series_id": "street|鼓浪屿街道",
+      "scope": "street",
+      "street": "鼓浪屿街道",
+      "community": "",
+      "name": "鼓浪屿街道",
+      "total": 60,
+      "nonzero_weeks": 13,
+      "zero_ratio": 0.745,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 0.913,
+      "rmse": 1.135,
+      "smape": 1.294,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.0,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.0,
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "top_communities": [
+    {
+      "series_id": "community|筼筜街道|槟榔社区",
+      "scope": "community",
+      "street": "筼筜街道",
+      "community": "槟榔社区",
+      "name": "槟榔社区",
+      "total": 200,
+      "nonzero_weeks": 25,
+      "zero_ratio": 0.51,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 4.564,
+      "rmse": 5.607,
+      "smape": 0.763,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 5.58,
+          "count": 6
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 5.58,
+          "count": 6
+        }
+      ]
+    },
+    {
+      "series_id": "community|嘉莲街道|盈翠社区",
+      "scope": "community",
+      "street": "嘉莲街道",
+      "community": "盈翠社区",
+      "name": "盈翠社区",
+      "total": 166,
+      "nonzero_weeks": 23,
+      "zero_ratio": 0.549,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 5.331,
+      "rmse": 5.757,
+      "smape": 1.164,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 4.36,
+          "count": 4
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 4.36,
+          "count": 4
+        }
+      ]
+    },
+    {
+      "series_id": "community|筼筜街道|金桥社区",
+      "scope": "community",
+      "street": "筼筜街道",
+      "community": "金桥社区",
+      "name": "金桥社区",
+      "total": 138,
+      "nonzero_weeks": 20,
+      "zero_ratio": 0.608,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 4.826,
+      "rmse": 5.643,
+      "smape": 1.213,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 5.18,
+          "count": 5
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 5.18,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "series_id": "community|开元街道|虎溪社区",
+      "scope": "community",
+      "street": "开元街道",
+      "community": "虎溪社区",
+      "name": "虎溪社区",
+      "total": 120,
+      "nonzero_weeks": 17,
+      "zero_ratio": 0.667,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 3.317,
+      "rmse": 4.022,
+      "smape": 1.103,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 3.29,
+          "count": 3
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 3.29,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "series_id": "community|莲前街道|前埔南社区",
+      "scope": "community",
+      "street": "莲前街道",
+      "community": "前埔南社区",
+      "name": "前埔南社区",
+      "total": 98,
+      "nonzero_weeks": 22,
+      "zero_ratio": 0.569,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 1.5,
+      "rmse": 2.345,
+      "smape": 1.0,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.0,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.0,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|莲前街道|前埔东社区",
+      "scope": "community",
+      "street": "莲前街道",
+      "community": "前埔东社区",
+      "name": "前埔东社区",
+      "total": 97,
+      "nonzero_weeks": 15,
+      "zero_ratio": 0.706,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 3.298,
+      "rmse": 3.935,
+      "smape": 1.647,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 3.14,
+          "count": 3
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 3.14,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "series_id": "community|莲前街道|洪文社区",
+      "scope": "community",
+      "street": "莲前街道",
+      "community": "洪文社区",
+      "name": "洪文社区",
+      "total": 96,
+      "nonzero_weeks": 14,
+      "zero_ratio": 0.725,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 2.5,
+      "rmse": 4.198,
+      "smape": 0.775,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.0,
+          "count": 0
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.0,
+          "count": 0
+        }
+      ]
+    },
+    {
+      "series_id": "community|筼筜街道|仙阁社区",
+      "scope": "community",
+      "street": "筼筜街道",
+      "community": "仙阁社区",
+      "name": "仙阁社区",
+      "total": 95,
+      "nonzero_weeks": 17,
+      "zero_ratio": 0.667,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 2.562,
+      "rmse": 3.881,
+      "smape": 0.708,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.0,
+          "count": 0
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.0,
+          "count": 0
+        }
+      ]
+    },
+    {
+      "series_id": "community|中华街道|镇海社区",
+      "scope": "community",
+      "street": "中华街道",
+      "community": "镇海社区",
+      "name": "镇海社区",
+      "total": 85,
+      "nonzero_weeks": 13,
+      "zero_ratio": 0.745,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.628,
+      "rmse": 2.165,
+      "smape": 1.524,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.06,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.06,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|梧村街道|金榜山社区",
+      "scope": "community",
+      "street": "梧村街道",
+      "community": "金榜山社区",
+      "name": "金榜山社区",
+      "total": 81,
+      "nonzero_weeks": 15,
+      "zero_ratio": 0.706,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 2.924,
+      "rmse": 4.754,
+      "smape": 1.374,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 2.53,
+          "count": 3
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 2.53,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "series_id": "community|嘉莲街道|莲西社区",
+      "scope": "community",
+      "street": "嘉莲街道",
+      "community": "莲西社区",
+      "name": "莲西社区",
+      "total": 80,
+      "nonzero_weeks": 14,
+      "zero_ratio": 0.725,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.057,
+      "rmse": 1.195,
+      "smape": 1.569,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.96,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.96,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|莲前街道|岭兜社区",
+      "scope": "community",
+      "street": "莲前街道",
+      "community": "岭兜社区",
+      "name": "岭兜社区",
+      "total": 80,
+      "nonzero_weeks": 17,
+      "zero_ratio": 0.667,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 2.301,
+      "rmse": 3.655,
+      "smape": 0.993,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 2.66,
+          "count": 3
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 2.66,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "series_id": "community|嘉莲街道|莲秀社区",
+      "scope": "community",
+      "street": "嘉莲街道",
+      "community": "莲秀社区",
+      "name": "莲秀社区",
+      "total": 79,
+      "nonzero_weeks": 21,
+      "zero_ratio": 0.588,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 2.308,
+      "rmse": 2.903,
+      "smape": 0.883,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 2.82,
+          "count": 3
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 2.82,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "series_id": "community|开元街道|溪岸社区",
+      "scope": "community",
+      "street": "开元街道",
+      "community": "溪岸社区",
+      "name": "溪岸社区",
+      "total": 76,
+      "nonzero_weeks": 14,
+      "zero_ratio": 0.725,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.296,
+      "rmse": 1.943,
+      "smape": 0.75,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.67,
+          "count": 2
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.67,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "series_id": "community|开元街道|天湖社区",
+      "scope": "community",
+      "street": "开元街道",
+      "community": "天湖社区",
+      "name": "天湖社区",
+      "total": 75,
+      "nonzero_weeks": 16,
+      "zero_ratio": 0.686,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.118,
+      "rmse": 1.453,
+      "smape": 0.974,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.16,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.16,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|筼筜街道|屿后社区",
+      "scope": "community",
+      "street": "筼筜街道",
+      "community": "屿后社区",
+      "name": "屿后社区",
+      "total": 70,
+      "nonzero_weeks": 15,
+      "zero_ratio": 0.706,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "damped_trend",
+      "mae": 1.396,
+      "rmse": 2.253,
+      "smape": 1.131,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.0,
+          "count": 0
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.0,
+          "count": 0
+        }
+      ]
+    },
+    {
+      "series_id": "community|莲前街道|金鸡亭社区",
+      "scope": "community",
+      "street": "莲前街道",
+      "community": "金鸡亭社区",
+      "name": "金鸡亭社区",
+      "total": 66,
+      "nonzero_weeks": 15,
+      "zero_ratio": 0.706,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.68,
+      "rmse": 2.463,
+      "smape": 0.994,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 2.01,
+          "count": 2
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 2.01,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "series_id": "community|莲前街道|瑞景社区",
+      "scope": "community",
+      "street": "莲前街道",
+      "community": "瑞景社区",
+      "name": "瑞景社区",
+      "total": 63,
+      "nonzero_weeks": 15,
+      "zero_ratio": 0.706,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 0.833,
+      "rmse": 1.09,
+      "smape": 1.072,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.07,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.07,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|鹭江街道|小学社区",
+      "scope": "community",
+      "street": "鹭江街道",
+      "community": "小学社区",
+      "name": "小学社区",
+      "total": 63,
+      "nonzero_weeks": 13,
+      "zero_ratio": 0.745,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 1.688,
+      "rmse": 3.269,
+      "smape": 0.693,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.0,
+          "count": 0
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.0,
+          "count": 0
+        }
+      ]
+    },
+    {
+      "series_id": "community|中华街道|仁安社区",
+      "scope": "community",
+      "street": "中华街道",
+      "community": "仁安社区",
+      "name": "仁安社区",
+      "total": 61,
+      "nonzero_weeks": 15,
+      "zero_ratio": 0.706,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "damped_trend",
+      "mae": 1.912,
+      "rmse": 3.191,
+      "smape": 0.893,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.0,
+          "count": 0
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.0,
+          "count": 0
+        }
+      ]
+    },
+    {
+      "series_id": "community|鼓浪屿街道|内厝社区",
+      "scope": "community",
+      "street": "鼓浪屿街道",
+      "community": "内厝社区",
+      "name": "内厝社区",
+      "total": 58,
+      "nonzero_weeks": 12,
+      "zero_ratio": 0.765,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 0.863,
+      "rmse": 1.112,
+      "smape": 1.303,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.91,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.91,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|厦港街道|下沃社区",
+      "scope": "community",
+      "street": "厦港街道",
+      "community": "下沃社区",
+      "name": "下沃社区",
+      "total": 57,
+      "nonzero_weeks": 18,
+      "zero_ratio": 0.647,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 2.688,
+      "rmse": 3.897,
+      "smape": 1.029,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.0,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.0,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|厦港街道|巡司顶社区",
+      "scope": "community",
+      "street": "厦港街道",
+      "community": "巡司顶社区",
+      "name": "巡司顶社区",
+      "total": 57,
+      "nonzero_weeks": 15,
+      "zero_ratio": 0.706,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.176,
+      "rmse": 1.774,
+      "smape": 0.856,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.02,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.02,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|筼筜街道|一里社区",
+      "scope": "community",
+      "street": "筼筜街道",
+      "community": "一里社区",
+      "name": "一里社区",
+      "total": 57,
+      "nonzero_weeks": 15,
+      "zero_ratio": 0.706,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.57,
+      "rmse": 2.178,
+      "smape": 1.553,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.95,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.95,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|莲前街道|莲云社区",
+      "scope": "community",
+      "street": "莲前街道",
+      "community": "莲云社区",
+      "name": "莲云社区",
+      "total": 57,
+      "nonzero_weeks": 16,
+      "zero_ratio": 0.686,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.256,
+      "rmse": 1.424,
+      "smape": 1.031,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.5,
+          "count": 2
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.5,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "series_id": "community|莲前街道|前埔北社区",
+      "scope": "community",
+      "street": "莲前街道",
+      "community": "前埔北社区",
+      "name": "前埔北社区",
+      "total": 55,
+      "nonzero_weeks": 18,
+      "zero_ratio": 0.647,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 0.764,
+      "rmse": 0.917,
+      "smape": 0.699,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.24,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.24,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|嘉莲街道|莲花五村社区",
+      "scope": "community",
+      "street": "嘉莲街道",
+      "community": "莲花五村社区",
+      "name": "莲花五村社区",
+      "total": 54,
+      "nonzero_weeks": 12,
+      "zero_ratio": 0.765,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 1.438,
+      "rmse": 2.634,
+      "smape": 0.932,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.0,
+          "count": 0
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.0,
+          "count": 0
+        }
+      ]
+    },
+    {
+      "series_id": "community|筼筜街道|育秀社区",
+      "scope": "community",
+      "street": "筼筜街道",
+      "community": "育秀社区",
+      "name": "育秀社区",
+      "total": 53,
+      "nonzero_weeks": 13,
+      "zero_ratio": 0.745,
+      "series_type": "intermittent_count",
+      "stationarity": "weak_trend_or_level_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.493,
+      "rmse": 1.564,
+      "smape": 1.454,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.39,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.39,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|开元街道|育青社区",
+      "scope": "community",
+      "street": "开元街道",
+      "community": "育青社区",
+      "name": "育青社区",
+      "total": 51,
+      "nonzero_weeks": 18,
+      "zero_ratio": 0.647,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 0.862,
+      "rmse": 1.134,
+      "smape": 0.553,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.37,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.37,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|梧村街道|溪东社区",
+      "scope": "community",
+      "street": "梧村街道",
+      "community": "溪东社区",
+      "name": "溪东社区",
+      "total": 50,
+      "nonzero_weeks": 13,
+      "zero_ratio": 0.745,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.347,
+      "rmse": 2.193,
+      "smape": 1.62,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.62,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.62,
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "model_leaderboard": [
+    {
+      "series_id": "community|开元街道|美湖社区",
+      "scope": "community",
+      "name": "美湖社区",
+      "model": "croston_sba",
+      "mae": 0.404,
+      "rmse": 0.474,
+      "smape": 1.766
+    },
+    {
+      "series_id": "community|嘉莲街道|华福社区",
+      "scope": "community",
+      "name": "华福社区",
+      "model": "croston_sba",
+      "mae": 0.486,
+      "rmse": 0.698,
+      "smape": 1.903
+    },
+    {
+      "series_id": "community|筼筜街道|莲岳社区",
+      "scope": "community",
+      "name": "莲岳社区",
+      "model": "croston_sba",
+      "mae": 0.488,
+      "rmse": 0.507,
+      "smape": 1.127
+    },
+    {
+      "series_id": "community|筼筜街道|振兴社区",
+      "scope": "community",
+      "name": "振兴社区",
+      "model": "naive_last",
+      "mae": 0.5,
+      "rmse": 1.414,
+      "smape": 0.25
+    },
+    {
+      "series_id": "community|中华街道|中山社区",
+      "scope": "community",
+      "name": "中山社区",
+      "model": "poisson_harmonic",
+      "mae": 0.685,
+      "rmse": 1.118,
+      "smape": 0.851
+    },
+    {
+      "series_id": "community|莲前街道|观音山社区",
+      "scope": "community",
+      "name": "观音山社区",
+      "model": "naive_last",
+      "mae": 0.688,
+      "rmse": 1.09,
+      "smape": 0.717
+    },
+    {
+      "series_id": "community|梧村街道|万寿北社区",
+      "scope": "community",
+      "name": "万寿北社区",
+      "model": "croston_sba",
+      "mae": 0.696,
+      "rmse": 0.831,
+      "smape": 1.018
+    },
+    {
+      "series_id": "community|开元街道|西边社区",
+      "scope": "community",
+      "name": "西边社区",
+      "model": "croston_sba",
+      "mae": 0.709,
+      "rmse": 1.024,
+      "smape": 1.649
+    },
+    {
+      "series_id": "community|梧村街道|梧村社区",
+      "scope": "community",
+      "name": "梧村社区",
+      "model": "croston_sba",
+      "mae": 0.72,
+      "rmse": 0.764,
+      "smape": 1.785
+    },
+    {
+      "series_id": "community|莲前街道|前埔北社区",
+      "scope": "community",
+      "name": "前埔北社区",
+      "model": "croston_sba",
+      "mae": 0.764,
+      "rmse": 0.917,
+      "smape": 0.699
+    },
+    {
+      "series_id": "community|筼筜街道|湖光社区",
+      "scope": "community",
+      "name": "湖光社区",
+      "model": "croston_sba",
+      "mae": 0.827,
+      "rmse": 1.05,
+      "smape": 0.889
+    },
+    {
+      "series_id": "community|莲前街道|瑞景社区",
+      "scope": "community",
+      "name": "瑞景社区",
+      "model": "croston_sba",
+      "mae": 0.833,
+      "rmse": 1.09,
+      "smape": 1.072
+    },
+    {
+      "series_id": "community|开元街道|育青社区",
+      "scope": "community",
+      "name": "育青社区",
+      "model": "croston_sba",
+      "mae": 0.862,
+      "rmse": 1.134,
+      "smape": 0.553
+    },
+    {
+      "series_id": "community|鼓浪屿街道|内厝社区",
+      "scope": "community",
+      "name": "内厝社区",
+      "model": "croston_sba",
+      "mae": 0.863,
+      "rmse": 1.112,
+      "smape": 1.303
+    },
+    {
+      "series_id": "community|筼筜街道|岳阳社区",
+      "scope": "community",
+      "name": "岳阳社区",
+      "model": "poisson_harmonic",
+      "mae": 0.891,
+      "rmse": 1.27,
+      "smape": 1.025
+    },
+    {
+      "series_id": "community|筼筜街道|官任社区",
+      "scope": "community",
+      "name": "官任社区",
+      "model": "croston_sba",
+      "mae": 0.936,
+      "rmse": 1.574,
+      "smape": 1.749
+    },
+    {
+      "series_id": "community|滨海街道|曾厝垵社区",
+      "scope": "community",
+      "name": "曾厝垵社区",
+      "model": "naive_last",
+      "mae": 0.938,
+      "rmse": 1.984,
+      "smape": 0.417
+    },
+    {
+      "series_id": "community|嘉莲街道|莲西社区",
+      "scope": "community",
+      "name": "莲西社区",
+      "model": "croston_sba",
+      "mae": 1.057,
+      "rmse": 1.195,
+      "smape": 1.569
+    },
+    {
+      "series_id": "community|嘉莲街道|长青社区",
+      "scope": "community",
+      "name": "长青社区",
+      "model": "croston_sba",
+      "mae": 1.098,
+      "rmse": 1.443,
+      "smape": 1.781
+    },
+    {
+      "series_id": "community|开元街道|天湖社区",
+      "scope": "community",
+      "name": "天湖社区",
+      "model": "croston_sba",
+      "mae": 1.118,
+      "rmse": 1.453,
+      "smape": 0.974
+    },
+    {
+      "series_id": "community|鹭江街道|厦禾社区",
+      "scope": "community",
+      "name": "厦禾社区",
+      "model": "croston_sba",
+      "mae": 1.131,
+      "rmse": 1.639,
+      "smape": 1.799
+    },
+    {
+      "series_id": "community|鹭江街道|双莲池社区",
+      "scope": "community",
+      "name": "双莲池社区",
+      "model": "croston_sba",
+      "mae": 1.144,
+      "rmse": 1.253,
+      "smape": 1.12
+    },
+    {
+      "series_id": "community|厦港街道|巡司顶社区",
+      "scope": "community",
+      "name": "巡司顶社区",
+      "model": "croston_sba",
+      "mae": 1.176,
+      "rmse": 1.774,
+      "smape": 0.856
+    },
+    {
+      "series_id": "community|嘉莲街道|莲花北社区",
+      "scope": "community",
+      "name": "莲花北社区",
+      "model": "damped_trend",
+      "mae": 1.182,
+      "rmse": 2.356,
+      "smape": 0.877
+    },
+    {
+      "series_id": "community|嘉莲街道|松柏社区",
+      "scope": "community",
+      "name": "松柏社区",
+      "model": "croston_sba",
+      "mae": 1.194,
+      "rmse": 1.304,
+      "smape": 1.725
+    },
+    {
+      "series_id": "community|莲前街道|莲云社区",
+      "scope": "community",
+      "name": "莲云社区",
+      "model": "croston_sba",
+      "mae": 1.256,
+      "rmse": 1.424,
+      "smape": 1.031
+    },
+    {
+      "series_id": "community|开元街道|溪岸社区",
+      "scope": "community",
+      "name": "溪岸社区",
+      "model": "croston_sba",
+      "mae": 1.296,
+      "rmse": 1.943,
+      "smape": 0.75
+    },
+    {
+      "series_id": "community|筼筜街道|仙岳社区",
+      "scope": "community",
+      "name": "仙岳社区",
+      "model": "croston_sba",
+      "mae": 1.339,
+      "rmse": 2.244,
+      "smape": 1.836
+    },
+    {
+      "series_id": "community|梧村街道|溪东社区",
+      "scope": "community",
+      "name": "溪东社区",
+      "model": "croston_sba",
+      "mae": 1.347,
+      "rmse": 2.193,
+      "smape": 1.62
+    },
+    {
+      "series_id": "community|筼筜街道|屿后社区",
+      "scope": "community",
+      "name": "屿后社区",
+      "model": "damped_trend",
+      "mae": 1.396,
+      "rmse": 2.253,
+      "smape": 1.131
+    },
+    {
+      "series_id": "community|嘉莲街道|莲花五村社区",
+      "scope": "community",
+      "name": "莲花五村社区",
+      "model": "naive_last",
+      "mae": 1.438,
+      "rmse": 2.634,
+      "smape": 0.932
+    },
+    {
+      "series_id": "community|筼筜街道|育秀社区",
+      "scope": "community",
+      "name": "育秀社区",
+      "model": "croston_sba",
+      "mae": 1.493,
+      "rmse": 1.564,
+      "smape": 1.454
+    },
+    {
+      "series_id": "community|莲前街道|前埔南社区",
+      "scope": "community",
+      "name": "前埔南社区",
+      "model": "naive_last",
+      "mae": 1.5,
+      "rmse": 2.345,
+      "smape": 1.0
+    },
+    {
+      "series_id": "community|厦港街道|蜂巢山社区",
+      "scope": "community",
+      "name": "蜂巢山社区",
+      "model": "naive_last",
+      "mae": 1.562,
+      "rmse": 2.487,
+      "smape": 0.579
+    },
+    {
+      "series_id": "community|筼筜街道|一里社区",
+      "scope": "community",
+      "name": "一里社区",
+      "model": "croston_sba",
+      "mae": 1.57,
+      "rmse": 2.178,
+      "smape": 1.553
+    },
+    {
+      "series_id": "community|中华街道|镇海社区",
+      "scope": "community",
+      "name": "镇海社区",
+      "model": "croston_sba",
+      "mae": 1.628,
+      "rmse": 2.165,
+      "smape": 1.524
+    },
+    {
+      "series_id": "community|莲前街道|金鸡亭社区",
+      "scope": "community",
+      "name": "金鸡亭社区",
+      "model": "croston_sba",
+      "mae": 1.68,
+      "rmse": 2.463,
+      "smape": 0.994
+    },
+    {
+      "series_id": "community|鹭江街道|小学社区",
+      "scope": "community",
+      "name": "小学社区",
+      "model": "naive_last",
+      "mae": 1.688,
+      "rmse": 3.269,
+      "smape": 0.693
+    },
+    {
+      "series_id": "community|中华街道|仁安社区",
+      "scope": "community",
+      "name": "仁安社区",
+      "model": "damped_trend",
+      "mae": 1.912,
+      "rmse": 3.191,
+      "smape": 0.893
+    },
+    {
+      "series_id": "community|滨海街道|黄厝社区",
+      "scope": "community",
+      "name": "黄厝社区",
+      "model": "croston_sba",
+      "mae": 1.934,
+      "rmse": 2.687,
+      "smape": 1.161
+    }
+  ],
+  "api_probe": {
+    "base_url": "http://www.cnalks.cn/api/v1",
+    "model": "ExponentialSmoothing",
+    "frequency": "7D",
+    "point_count": 51,
+    "steps": [
+      {
+        "label": "models_meta",
+        "http_status": 200
+      },
+      {
+        "label": "create_series",
+        "http_status": 201
+      },
+      {
+        "label": "ingest_points",
+        "http_status": 201
+      },
+      {
+        "label": "train_start",
+        "http_status": 200
+      },
+      {
+        "label": "train_poll",
+        "http_status": null,
+        "event_count": 2,
+        "last_status": "SUCCESS",
+        "last_result": {
+          "version_id": "codex-probe-20260526165052",
+          "series_id": "eb98bb28-32ab-4031-aa60-4dc95313e15a",
+          "model_driver": "ExponentialSmoothing",
+          "status": "SUCCESS"
+        },
+        "last_error": null
+      },
+      {
+        "label": "forecast_start",
+        "http_status": 200
+      },
+      {
+        "label": "forecast_poll",
+        "http_status": null,
+        "event_count": 2,
+        "last_status": "SUCCESS",
+        "last_result": "Insufficient data: need 60, got 51",
+        "last_error": null
+      },
+      {
+        "label": "forecast_results",
+        "http_status": 200
+      }
+    ],
+    "cleanup_status": 204
+  }
+}
