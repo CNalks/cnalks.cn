@@ -280,8 +280,8 @@ function countForecast(item: any) {
           </div>
 
           <div class="street-stack">
-            {streetPanels.map((street: any, index: number) => (
-              <details class="street-card" open={index < 2} style={riskStyle(street)}>
+            {streetPanels.map((street: any) => (
+              <details class="street-card" style={riskStyle(street)}>
                 <summary>
                   <div class="street-main">
                     <span class="risk-dot" title={street.risk.label}></span>
