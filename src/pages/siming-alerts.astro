@@ -104,9 +104,9 @@ function countForecast(item: any) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="思明区传染病相关信号的周序列、风险分级、模型筛选与社区网格矩阵。" />
+    <meta name="description" content="基于周度信号的街道-社区网格监测与短期趋势预测。" />
     <link rel="icon" href="/favicon.svg" />
-    <title>传染病网格化风险态势 | CNalks</title>
+    <title>区域传染病时空风险研判矩阵 | CNalks</title>
   </head>
   <body class="analysis-body">
     <div class="analysis-page">
@@ -122,9 +122,9 @@ function countForecast(item: any) {
         <section class="analysis-hero">
           <div>
             <p class="analysis-kicker">infectious disease grid surveillance · Siming District</p>
-            <h1><span>传染病网格化</span><span>风险态势</span></h1>
+            <h1><span>区域传染病</span><span>时空风险</span><span>研判矩阵</span></h1>
             <p class="analysis-copy">
-              基于周度信号形成区、街道、社区三级网格视图；连续序列提供短期统计参考，稀疏序列保留为监测标记。
+              基于周度信号的街道-社区网格监测与短期趋势预测。
             </p>
             <div class="hero-badges">
               <span>{payload.source.date_min} 至 {payload.source.date_max}</span>
@@ -413,7 +413,9 @@ function countForecast(item: any) {
   }
 
   .analysis-hero h1 span {
-    display: block;
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: .18em;
   }
 
   .analysis-copy {
