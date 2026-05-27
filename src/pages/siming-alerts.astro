@@ -9,6 +9,8 @@ const forecast = district.forecast || [];
 const streetPanels = payload.street_panels || [];
 const methodology = payload.methodology || {};
 const riskCounts = payload.summary.risk_by_scope?.community || {};
+const dataLimit = payload.limitations?.[0] || "";
+const aiLabForecastLimit = payload.api_probe?.steps?.find((step: any) => step.label === "forecast_poll")?.last_result || "";
 
 const width = 1120;
 const height = 430;
@@ -76,7 +78,7 @@ function modelLabel(name: string) {
 
 function gateLabel(reason: string) {
   const labels: Record<string, string> = {
-    eligible: "进入短期参考",
+    eligible: "短期参考序列",
     low_total_count: "总量过低",
     too_few_nonzero_weeks: "非零周不足",
     zero_inflated_sparse: "零膨胀",
@@ -93,7 +95,7 @@ function riskStyle(item: any) {
 }
 
 function countForecast(item: any) {
-  return item.forecast?.map((row: any) => row.count).join(" / ") || "仅监测";
+  return item.forecast?.map((row: any) => row.count).join(" / ") || "监测序列";
 }
 ---
 
@@ -102,9 +104,9 @@ function countForecast(item: any) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="思明区学校预警信号周序列、风险分级、模型筛选与社区风险矩阵。" />
+    <meta name="description" content="思明区传染病相关信号的周序列、风险分级、模型筛选与社区网格矩阵。" />
     <link rel="icon" href="/favicon.svg" />
-    <title>思明区预警信号风险矩阵 | CNalks</title>
+    <title>传染病网格化风险态势 | CNalks</title>
   </head>
   <body class="analysis-body">
     <div class="analysis-page">
@@ -113,40 +115,46 @@ function countForecast(item: any) {
         <nav>
           <a href="#series">趋势</a>
           <a href="#matrix">风险矩阵</a>
-          <a href="#method">方法</a>
-          <a href="#api">AI_lab</a>
         </nav>
       </header>
 
       <main>
         <section class="analysis-hero">
           <div>
-            <p class="analysis-kicker">weekly signal study · Siming District</p>
-            <h1>学校预警信号风险矩阵</h1>
+            <p class="analysis-kicker">infectious disease grid surveillance · Siming District</p>
+            <h1><span>传染病网格化</span><span>风险态势</span></h1>
             <p class="analysis-copy">
-              将 3508 条预警信号按 ISO 周聚合为全区、街道和 87 个社区序列。页面先做风险分级，再说明哪些序列适合短期参考、哪些序列只用于监测。
+              基于周度信号形成区、街道、社区三级网格视图；连续序列提供短期统计参考，稀疏序列保留为监测标记。
             </p>
             <div class="hero-badges">
               <span>{payload.source.date_min} 至 {payload.source.date_max}</span>
               <span>按 {payload.source.date_column} 聚合</span>
-              <span>社区口径：F列 87 个观测社区</span>
+              <span>社区口径：87 个观测社区</span>
+              <details class="info-popover">
+                <summary aria-label="查看数据口径">!</summary>
+                <div class="info-card">
+                  <h3>数据口径</h3>
+                  <p>纳入 {payload.summary.records.toLocaleString("zh-CN")} 条信号记录，按 ISO 周聚合为 {payload.summary.series_count} 条监测序列。社区口径来自处理结果 F 列去重统计。</p>
+                  {dataLimit && <p>{dataLimit}</p>}
+                </div>
+              </details>
             </div>
           </div>
           <div class="hero-metrics" aria-label="关键指标">
             <div>
-              <small>社区高风险</small>
+              <small>高风险社区</small>
               <strong>{riskCounts.alert || 0}</strong>
             </div>
             <div>
-              <small>社区预警/关注</small>
+              <small>预警/关注社区</small>
               <strong>{(riskCounts.warning || 0) + (riskCounts.watch || 0)}</strong>
             </div>
             <div>
-              <small>可入模序列</small>
+              <small>短期参考序列</small>
               <strong>{payload.summary.forecast_eligible_count}</strong>
             </div>
             <div>
-              <small>总序列</small>
+              <small>监测序列</small>
               <strong>{payload.summary.series_count}</strong>
             </div>
           </div>
@@ -156,7 +164,17 @@ function countForecast(item: any) {
           <div class="section-heading">
             <div>
               <p class="analysis-kicker">district trend</p>
-              <h2>全区周信号量与短期参考</h2>
+              <div class="title-row">
+                <h2>全区周度态势与短期参考</h2>
+                <details class="info-popover">
+                  <summary aria-label="查看曲线说明">!</summary>
+                  <div class="info-card">
+                    <h3>曲线说明</h3>
+                    <p>实线为全区周聚合观测值；虚线为未来 {payload.summary.horizon_weeks} 周统计参考，并与最后一个观测点连续显示。</p>
+                    <p>W40 起标注为流感监测季参考区间，用于观察秋冬季信号集中度，不代表已建立完整年度季节模型。</p>
+                  </div>
+                </details>
+              </div>
             </div>
             <div class="chart-legend" aria-label="图例">
               <span><i class="actual-dot"></i>观测</span>
@@ -227,8 +245,8 @@ function countForecast(item: any) {
               <span>{district.risk.basis}；当前周为 {district.risk.current_label}。</span>
             </div>
             <div>
-              <strong>{modelLabel(district.best_model)}</strong>
-              <span>滚动回测最优；MAE {metric(district.mae)}，RMSE {metric(district.rmse)}。未来 {payload.summary.horizon_weeks} 周只作为短期参考。</span>
+              <strong>{modelLabel(district.best_model)} · 回测 MAE {metric(district.mae)} / RMSE {metric(district.rmse)}</strong>
+              <span>模型经滚动回测筛选；结果仅用于短期趋势参考，不作为正式流行规模预测。</span>
             </div>
           </div>
         </section>
@@ -237,7 +255,22 @@ function countForecast(item: any) {
           <div class="section-heading">
             <div>
               <p class="analysis-kicker">street · community matrix</p>
-              <h2>街道-社区风险矩阵</h2>
+              <div class="title-row">
+                <h2>街道-社区网格矩阵</h2>
+                <details class="info-popover">
+                  <summary aria-label="查看风险分级说明">!</summary>
+                  <div class="info-card wide">
+                    <h3>风险分级</h3>
+                    <p>分级综合短基线偏离、近期趋势、短期参考值和本监测季峰值。颜色表示需关注强度，详细行保留当前周状态，避免将已回落序列误读为当前暴发。</p>
+                    <div class="compact-levels">
+                      {methodology.risk_levels?.map((item: any) => (
+                        <span class={`risk-${item.level}`}><i></i><b>{item.label}</b>{item.meaning}</span>
+                      ))}
+                    </div>
+                    <p>方法参考 CDC ILINet 活动水平、EARS C2 短基线异常探测、中国流感周报同期比较和 Farrington 异常探测框架。</p>
+                  </div>
+                </details>
+              </div>
             </div>
             <div class="risk-legend" aria-label="风险图例">
               {methodology.risk_levels?.map((item: any) => (
@@ -273,7 +306,7 @@ function countForecast(item: any) {
                   <div class="street-explain">
                     <span>{street.risk.basis}</span>
                     <span>当前周 {street.risk.current_count}，短基线 {metric(street.risk.baseline_mean, 2)} ± {metric(street.risk.baseline_sd, 2)}。</span>
-                    <span>模型：{modelLabel(street.best_model)}；两周参考 {countForecast(street)}。</span>
+                    <span>{modelLabel(street.best_model)}；2周参考值 {countForecast(street)}。</span>
                   </div>
                   <div class="community-list">
                     {street.communities.map((item: any) => (
@@ -290,7 +323,7 @@ function countForecast(item: any) {
                           <span>零值 <b>{pct(item.zero_ratio)}</b></span>
                         </div>
                         <p>{item.risk.basis}</p>
-                        <small>{gateLabel(item.gate_reason)} · {modelLabel(item.best_model)} · 两周参考 {countForecast(item)}</small>
+                        <small>{gateLabel(item.gate_reason)} · {modelLabel(item.best_model)} · 2周参考值 {countForecast(item)}</small>
                       </article>
                     ))}
                   </div>
@@ -300,76 +333,21 @@ function countForecast(item: any) {
           </div>
         </section>
 
-        <section class="analysis-section method-section" id="method">
-          <div class="section-heading">
-            <div>
-              <p class="analysis-kicker">method readme</p>
-              <h2>怎样分级、为什么这样建模</h2>
-            </div>
-          </div>
-          <div class="method-grid">
-            <article class="method-panel">
-              <h3>风险分级</h3>
-              <p>主等级表示“本监测季内是否出现过需要复核的异常强度”，详细栏同时显示当前周状态，避免把已经回落的序列误读为仍在暴发。</p>
-              <div class="level-list">
-                {methodology.risk_levels?.map((item: any) => (
-                  <div class={`level-row risk-${item.level}`}>
-                    <i></i>
-                    <span><b>{item.label}</b>{item.meaning}</span>
-                  </div>
-                ))}
-              </div>
-            </article>
-            <article class="method-panel">
-              <h3>5 个候选模型</h3>
-              <p>这些是本地 fallback 实验集，用于 51 周短序列的滚动回测；线上 AI_lab 正式预测接口目前因 60 点门槛返回 insufficient data。</p>
-              <div class="model-note-list">
-                {methodology.model_notes?.map((item: any) => (
-                  <div>
-                    <strong>{item.label}</strong>
-                    <span>{item.why}</span>
-                  </div>
-                ))}
-              </div>
-            </article>
-            <article class="method-panel">
-              <h3>为什么有些序列只监测</h3>
-              <ul>
-                {methodology.gate_rules?.map((item: string) => <li>{item}</li>)}
-              </ul>
-              <p>本次结果：全区 1 条、街道 10 条全部入模；社区 87 条中 51 条入模，36 条保留为监测序列。</p>
-            </article>
-            <article class="method-panel">
-              <h3>依据来源</h3>
-              <ul class="source-list">
+        <div class="analysis-footnote">
+          <details class="info-popover footnote-popover">
+            <summary aria-label="查看模型和接口说明">!</summary>
+            <div class="info-card wide">
+              <h3>模型与接口状态</h3>
+              <p>短期参考由 5 类候选模型经滚动回测择优产生：最近值延续、4周移动均值、阻尼趋势、Croston-SBA、泊松谐波。低总量、非零周不足、零膨胀或单周尖峰主导的序列仅进入监测。</p>
+              <p>AI_lab series/data/train 链路已验证；当前样本为 51 周，通用预测接口返回 {aiLabForecastLimit || "样本点不足"}，因此页面保留结构化批量实验结果。</p>
+              <ul class="source-list compact">
                 {methodology.sources?.map((item: any) => (
-                  <li><a href={item.url}>{item.title}</a><span>{item.used_for}</span></li>
+                  <li><a href={item.url}>{item.title}</a></li>
                 ))}
               </ul>
-            </article>
-          </div>
-        </section>
-
-        <section class="analysis-section grid-two" id="api">
-          <div class="model-panel">
-            <p class="analysis-kicker">AI_lab probe</p>
-            <h2>接口测试结论</h2>
-            <div class="api-steps">
-              <div><span>模型元数据</span><strong>HTTP 200</strong></div>
-              <div><span>临时序列写入</span><strong>201 · 51 点</strong></div>
-              <div><span>训练</span><strong>成功</strong></div>
-              <div><span>预测运行</span><strong>insufficient data</strong></div>
             </div>
-            <p>AI_lab 的通用 series/data/train 链路可用；本页暂用本地批量实验承接展示，并保留结构化指标，便于后续迁回后端。</p>
-          </div>
-          <div class="model-panel">
-            <p class="analysis-kicker">data limits</p>
-            <h2>解释边界</h2>
-            <ul class="limits">
-              {payload.limitations.map((item: string) => <li>{item}</li>)}
-            </ul>
-          </div>
-        </section>
+          </details>
+        </div>
       </main>
     </div>
   </body>
@@ -434,6 +412,10 @@ function countForecast(item: any) {
     line-height: .98;
   }
 
+  .analysis-hero h1 span {
+    display: block;
+  }
+
   .analysis-copy {
     max-width: 760px;
     color: var(--muted);
@@ -464,6 +446,69 @@ function countForecast(item: any) {
     font-size: 13px;
   }
 
+  .title-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .info-popover {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .info-popover summary {
+    width: 30px;
+    height: 30px;
+    display: inline-grid;
+    place-items: center;
+    border: 1px solid rgba(125, 211, 252, .32);
+    border-radius: 999px;
+    color: #bdeaff;
+    background: rgba(125, 211, 252, .08);
+    font-weight: 800;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .info-popover summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .info-card {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 10px);
+    left: 0;
+    width: min(430px, calc(100vw - 42px));
+    border: 1px solid rgba(125, 211, 252, .22);
+    border-radius: 8px;
+    padding: 16px;
+    background: rgba(10, 16, 14, .98);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, .38);
+  }
+
+  .section-heading .info-card {
+    right: 0;
+    left: auto;
+  }
+
+  .info-card.wide {
+    width: min(620px, calc(100vw - 42px));
+  }
+
+  .info-card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+  }
+
+  .info-card p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
   .hero-metrics {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -471,10 +516,8 @@ function countForecast(item: any) {
   }
 
   .hero-metrics div,
-  .model-panel,
   .chart-shell,
-  .street-card,
-  .method-panel {
+  .street-card {
     border: 1px solid var(--line);
     border-radius: 8px;
     background: rgba(16, 23, 19, .76);
@@ -487,8 +530,7 @@ function countForecast(item: any) {
 
   .hero-metrics small,
   .street-main small,
-  .community-item small,
-  .policy-grid small {
+  .community-item small {
     color: var(--muted);
   }
 
@@ -510,8 +552,7 @@ function countForecast(item: any) {
     margin-bottom: 14px;
   }
 
-  .section-heading h2,
-  .model-panel h2 {
+  .section-heading h2 {
     margin: 0;
     font-size: 28px;
   }
@@ -570,11 +611,7 @@ function countForecast(item: any) {
   }
 
   .chart-foot span,
-  .model-panel p,
-  .community-item p,
-  .limits,
-  .method-panel p,
-  .method-panel li {
+  .community-item p {
     color: var(--muted);
     line-height: 1.65;
   }
@@ -620,7 +657,7 @@ function countForecast(item: any) {
   .risk-dot,
   .mini-dot,
   .risk-legend i,
-  .level-row i {
+  .compact-levels i {
     width: 12px;
     height: 12px;
     flex: 0 0 12px;
@@ -679,70 +716,54 @@ function countForecast(item: any) {
     color: var(--ink);
   }
 
-  .method-grid,
-  .grid-two {
+  .compact-levels {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .compact-levels span {
+    display: grid;
+    grid-template-columns: 12px minmax(54px, auto) minmax(0, 1fr);
+    gap: 9px;
     align-items: start;
-  }
-
-  .method-panel,
-  .model-panel {
-    padding: 22px;
-  }
-
-  .method-panel h3 {
-    margin: 0 0 10px;
-    font-size: 22px;
-  }
-
-  .level-list,
-  .model-note-list,
-  .api-steps {
-    display: grid;
-    gap: 10px;
-  }
-
-  .level-row,
-  .model-note-list div,
-  .api-steps div {
     border: 1px solid var(--line);
     border-radius: 8px;
-    padding: 13px;
-    background: rgba(255,255,255,.035);
-  }
-
-  .level-row {
-    display: flex;
-    gap: 10px;
-    align-items: start;
-  }
-
-  .level-row span,
-  .model-note-list span,
-  .api-steps span,
-  .api-steps strong {
-    display: block;
-  }
-
-  .model-note-list span,
-  .api-steps span,
-  .source-list span {
-    margin-top: 4px;
+    padding: 10px;
     color: var(--muted);
-    font-size: 13px;
-    line-height: 1.55;
+    line-height: 1.5;
+  }
+
+  .compact-levels b {
+    color: var(--ink);
   }
 
   .source-list {
     display: grid;
     gap: 10px;
     padding-left: 18px;
+    margin: 12px 0 0;
   }
 
   .source-list a {
     color: var(--cyan);
+  }
+
+  .source-list.compact {
+    font-size: 13px;
+  }
+
+  .analysis-footnote {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+  }
+
+  .footnote-popover .info-card {
+    right: 0;
+    left: auto;
+    bottom: calc(100% + 10px);
+    top: auto;
   }
 
   .risk-normal { --risk: #22c55e; }
@@ -764,9 +785,7 @@ function countForecast(item: any) {
     }
 
     .analysis-hero,
-    .chart-foot,
-    .method-grid,
-    .grid-two {
+    .chart-foot {
       grid-template-columns: 1fr;
     }
 
@@ -789,6 +808,23 @@ function countForecast(item: any) {
 
     .community-metrics {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .title-row {
+      align-items: flex-start;
+    }
+
+    .info-card,
+    .section-heading .info-card,
+    .footnote-popover .info-card {
+      position: fixed;
+      top: 82px;
+      right: 12px;
+      left: 12px;
+      bottom: auto;
+      width: auto;
+      max-height: calc(100vh - 110px);
+      overflow: auto;
     }
   }
 </style>
