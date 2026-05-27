@@ -1,6 +1,6 @@
 {
   "title": "思明区学校预警信号周序列分析",
-  "generated_at": "2026-05-27T11:34:02.422665+08:00",
+  "generated_at": "2026-05-27T11:38:44.907060+08:00",
   "source": {
     "workbook": "思明疾控-20260415_处理结果.xlsx",
     "sheet": "处理结果",
@@ -24,6 +24,18 @@
       "community": 51,
       "district": 1,
       "street": 10
+    },
+    "street_normalization": {
+      "source": "official_community_list_unique_mapping",
+      "corrected_rows": 4,
+      "corrected_groups": [
+        {
+          "raw_street": "筼筜街道",
+          "official_street": "嘉莲街道",
+          "community": "松柏社区",
+          "rows": 4
+        }
+      ]
     },
     "candidate_models": [
       "naive_last",
@@ -340,7 +352,7 @@
       "street": "筼筜街道",
       "community": "",
       "name": "筼筜街道",
-      "total": 843,
+      "total": 839,
       "nonzero_weeks": 36,
       "zero_ratio": 0.294,
       "series_type": "intermittent_count",
@@ -410,7 +422,7 @@
       "street": "嘉莲街道",
       "community": "",
       "name": "嘉莲街道",
-      "total": 538,
+      "total": 542,
       "nonzero_weeks": 35,
       "zero_ratio": 0.314,
       "series_type": "intermittent_count",
