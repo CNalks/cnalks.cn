@@ -1,6 +1,6 @@
 {
   "title": "思明区学校预警信号周序列分析",
-  "generated_at": "2026-05-26T17:05:13.606600+08:00",
+  "generated_at": "2026-05-27T11:34:02.422665+08:00",
   "source": {
     "workbook": "思明疾控-20260415_处理结果.xlsx",
     "sheet": "处理结果",
@@ -13,9 +13,9 @@
   "summary": {
     "records": 3508,
     "weeks": 51,
-    "series_count": 112,
+    "series_count": 98,
     "series_by_scope": {
-      "community": 101,
+      "community": 87,
       "district": 1,
       "street": 10
     },
@@ -687,7 +687,7 @@
   ],
   "top_communities": [
     {
-      "series_id": "community|筼筜街道|槟榔社区",
+      "series_id": "community|槟榔社区",
       "scope": "community",
       "street": "筼筜街道",
       "community": "槟榔社区",
@@ -722,7 +722,7 @@
       ]
     },
     {
-      "series_id": "community|嘉莲街道|盈翠社区",
+      "series_id": "community|盈翠社区",
       "scope": "community",
       "street": "嘉莲街道",
       "community": "盈翠社区",
@@ -757,7 +757,7 @@
       ]
     },
     {
-      "series_id": "community|筼筜街道|金桥社区",
+      "series_id": "community|金桥社区",
       "scope": "community",
       "street": "筼筜街道",
       "community": "金桥社区",
@@ -792,7 +792,7 @@
       ]
     },
     {
-      "series_id": "community|开元街道|虎溪社区",
+      "series_id": "community|虎溪社区",
       "scope": "community",
       "street": "开元街道",
       "community": "虎溪社区",
@@ -827,7 +827,7 @@
       ]
     },
     {
-      "series_id": "community|莲前街道|前埔南社区",
+      "series_id": "community|前埔南社区",
       "scope": "community",
       "street": "莲前街道",
       "community": "前埔南社区",
@@ -862,7 +862,7 @@
       ]
     },
     {
-      "series_id": "community|莲前街道|前埔东社区",
+      "series_id": "community|前埔东社区",
       "scope": "community",
       "street": "莲前街道",
       "community": "前埔东社区",
@@ -897,7 +897,7 @@
       ]
     },
     {
-      "series_id": "community|莲前街道|洪文社区",
+      "series_id": "community|洪文社区",
       "scope": "community",
       "street": "莲前街道",
       "community": "洪文社区",
@@ -932,7 +932,7 @@
       ]
     },
     {
-      "series_id": "community|筼筜街道|仙阁社区",
+      "series_id": "community|仙阁社区",
       "scope": "community",
       "street": "筼筜街道",
       "community": "仙阁社区",
@@ -967,7 +967,7 @@
       ]
     },
     {
-      "series_id": "community|中华街道|镇海社区",
+      "series_id": "community|镇海社区",
       "scope": "community",
       "street": "中华街道",
       "community": "镇海社区",
@@ -1002,7 +1002,7 @@
       ]
     },
     {
-      "series_id": "community|梧村街道|金榜山社区",
+      "series_id": "community|金榜山社区",
       "scope": "community",
       "street": "梧村街道",
       "community": "金榜山社区",
@@ -1037,42 +1037,7 @@
       ]
     },
     {
-      "series_id": "community|嘉莲街道|莲西社区",
-      "scope": "community",
-      "street": "嘉莲街道",
-      "community": "莲西社区",
-      "name": "莲西社区",
-      "total": 80,
-      "nonzero_weeks": 14,
-      "zero_ratio": 0.725,
-      "series_type": "intermittent_count",
-      "stationarity": "nonstationary_trend_or_shift",
-      "seasonality": "insufficient_annual_cycles",
-      "forecast_eligible": true,
-      "gate_reason": "eligible",
-      "best_model": "croston_sba",
-      "mae": 1.057,
-      "rmse": 1.195,
-      "smape": 1.569,
-      "forecast": [
-        {
-          "step": 1,
-          "week_start": "2026-02-09",
-          "iso_week": "2026-W07",
-          "value": 0.96,
-          "count": 1
-        },
-        {
-          "step": 2,
-          "week_start": "2026-02-16",
-          "iso_week": "2026-W08",
-          "value": 0.96,
-          "count": 1
-        }
-      ]
-    },
-    {
-      "series_id": "community|莲前街道|岭兜社区",
+      "series_id": "community|岭兜社区",
       "scope": "community",
       "street": "莲前街道",
       "community": "岭兜社区",
@@ -1107,7 +1072,42 @@
       ]
     },
     {
-      "series_id": "community|嘉莲街道|莲秀社区",
+      "series_id": "community|莲西社区",
+      "scope": "community",
+      "street": "嘉莲街道",
+      "community": "莲西社区",
+      "name": "莲西社区",
+      "total": 80,
+      "nonzero_weeks": 14,
+      "zero_ratio": 0.725,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.057,
+      "rmse": 1.195,
+      "smape": 1.569,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 0.96,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 0.96,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|莲秀社区",
       "scope": "community",
       "street": "嘉莲街道",
       "community": "莲秀社区",
@@ -1142,7 +1142,7 @@
       ]
     },
     {
-      "series_id": "community|开元街道|溪岸社区",
+      "series_id": "community|溪岸社区",
       "scope": "community",
       "street": "开元街道",
       "community": "溪岸社区",
@@ -1177,7 +1177,7 @@
       ]
     },
     {
-      "series_id": "community|开元街道|天湖社区",
+      "series_id": "community|天湖社区",
       "scope": "community",
       "street": "开元街道",
       "community": "天湖社区",
@@ -1212,7 +1212,7 @@
       ]
     },
     {
-      "series_id": "community|筼筜街道|屿后社区",
+      "series_id": "community|屿后社区",
       "scope": "community",
       "street": "筼筜街道",
       "community": "屿后社区",
@@ -1247,7 +1247,7 @@
       ]
     },
     {
-      "series_id": "community|莲前街道|金鸡亭社区",
+      "series_id": "community|金鸡亭社区",
       "scope": "community",
       "street": "莲前街道",
       "community": "金鸡亭社区",
@@ -1282,42 +1282,7 @@
       ]
     },
     {
-      "series_id": "community|莲前街道|瑞景社区",
-      "scope": "community",
-      "street": "莲前街道",
-      "community": "瑞景社区",
-      "name": "瑞景社区",
-      "total": 63,
-      "nonzero_weeks": 15,
-      "zero_ratio": 0.706,
-      "series_type": "intermittent_count",
-      "stationarity": "nonstationary_trend_or_shift",
-      "seasonality": "insufficient_annual_cycles",
-      "forecast_eligible": true,
-      "gate_reason": "eligible",
-      "best_model": "croston_sba",
-      "mae": 0.833,
-      "rmse": 1.09,
-      "smape": 1.072,
-      "forecast": [
-        {
-          "step": 1,
-          "week_start": "2026-02-09",
-          "iso_week": "2026-W07",
-          "value": 1.07,
-          "count": 1
-        },
-        {
-          "step": 2,
-          "week_start": "2026-02-16",
-          "iso_week": "2026-W08",
-          "value": 1.07,
-          "count": 1
-        }
-      ]
-    },
-    {
-      "series_id": "community|鹭江街道|小学社区",
+      "series_id": "community|小学社区",
       "scope": "community",
       "street": "鹭江街道",
       "community": "小学社区",
@@ -1352,7 +1317,42 @@
       ]
     },
     {
-      "series_id": "community|中华街道|仁安社区",
+      "series_id": "community|瑞景社区",
+      "scope": "community",
+      "street": "莲前街道",
+      "community": "瑞景社区",
+      "name": "瑞景社区",
+      "total": 63,
+      "nonzero_weeks": 15,
+      "zero_ratio": 0.706,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 0.833,
+      "rmse": 1.09,
+      "smape": 1.072,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.07,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.07,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|仁安社区",
       "scope": "community",
       "street": "中华街道",
       "community": "仁安社区",
@@ -1387,7 +1387,7 @@
       ]
     },
     {
-      "series_id": "community|鼓浪屿街道|内厝社区",
+      "series_id": "community|内厝社区",
       "scope": "community",
       "street": "鼓浪屿街道",
       "community": "内厝社区",
@@ -1422,77 +1422,7 @@
       ]
     },
     {
-      "series_id": "community|厦港街道|下沃社区",
-      "scope": "community",
-      "street": "厦港街道",
-      "community": "下沃社区",
-      "name": "下沃社区",
-      "total": 57,
-      "nonzero_weeks": 18,
-      "zero_ratio": 0.647,
-      "series_type": "intermittent_count",
-      "stationarity": "nonstationary_trend_or_shift",
-      "seasonality": "insufficient_annual_cycles",
-      "forecast_eligible": true,
-      "gate_reason": "eligible",
-      "best_model": "naive_last",
-      "mae": 2.688,
-      "rmse": 3.897,
-      "smape": 1.029,
-      "forecast": [
-        {
-          "step": 1,
-          "week_start": "2026-02-09",
-          "iso_week": "2026-W07",
-          "value": 1.0,
-          "count": 1
-        },
-        {
-          "step": 2,
-          "week_start": "2026-02-16",
-          "iso_week": "2026-W08",
-          "value": 1.0,
-          "count": 1
-        }
-      ]
-    },
-    {
-      "series_id": "community|厦港街道|巡司顶社区",
-      "scope": "community",
-      "street": "厦港街道",
-      "community": "巡司顶社区",
-      "name": "巡司顶社区",
-      "total": 57,
-      "nonzero_weeks": 15,
-      "zero_ratio": 0.706,
-      "series_type": "intermittent_count",
-      "stationarity": "nonstationary_trend_or_shift",
-      "seasonality": "insufficient_annual_cycles",
-      "forecast_eligible": true,
-      "gate_reason": "eligible",
-      "best_model": "croston_sba",
-      "mae": 1.176,
-      "rmse": 1.774,
-      "smape": 0.856,
-      "forecast": [
-        {
-          "step": 1,
-          "week_start": "2026-02-09",
-          "iso_week": "2026-W07",
-          "value": 1.02,
-          "count": 1
-        },
-        {
-          "step": 2,
-          "week_start": "2026-02-16",
-          "iso_week": "2026-W08",
-          "value": 1.02,
-          "count": 1
-        }
-      ]
-    },
-    {
-      "series_id": "community|筼筜街道|一里社区",
+      "series_id": "community|一里社区",
       "scope": "community",
       "street": "筼筜街道",
       "community": "一里社区",
@@ -1527,7 +1457,77 @@
       ]
     },
     {
-      "series_id": "community|莲前街道|莲云社区",
+      "series_id": "community|下沃社区",
+      "scope": "community",
+      "street": "厦港街道",
+      "community": "下沃社区",
+      "name": "下沃社区",
+      "total": 57,
+      "nonzero_weeks": 18,
+      "zero_ratio": 0.647,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "naive_last",
+      "mae": 2.688,
+      "rmse": 3.897,
+      "smape": 1.029,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.0,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.0,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|巡司顶社区",
+      "scope": "community",
+      "street": "厦港街道",
+      "community": "巡司顶社区",
+      "name": "巡司顶社区",
+      "total": 57,
+      "nonzero_weeks": 15,
+      "zero_ratio": 0.706,
+      "series_type": "intermittent_count",
+      "stationarity": "nonstationary_trend_or_shift",
+      "seasonality": "insufficient_annual_cycles",
+      "forecast_eligible": true,
+      "gate_reason": "eligible",
+      "best_model": "croston_sba",
+      "mae": 1.176,
+      "rmse": 1.774,
+      "smape": 0.856,
+      "forecast": [
+        {
+          "step": 1,
+          "week_start": "2026-02-09",
+          "iso_week": "2026-W07",
+          "value": 1.02,
+          "count": 1
+        },
+        {
+          "step": 2,
+          "week_start": "2026-02-16",
+          "iso_week": "2026-W08",
+          "value": 1.02,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "series_id": "community|莲云社区",
       "scope": "community",
       "street": "莲前街道",
       "community": "莲云社区",
@@ -1562,7 +1562,7 @@
       ]
     },
     {
-      "series_id": "community|莲前街道|前埔北社区",
+      "series_id": "community|前埔北社区",
       "scope": "community",
       "street": "莲前街道",
       "community": "前埔北社区",
@@ -1597,7 +1597,7 @@
       ]
     },
     {
-      "series_id": "community|嘉莲街道|莲花五村社区",
+      "series_id": "community|莲花五村社区",
       "scope": "community",
       "street": "嘉莲街道",
       "community": "莲花五村社区",
@@ -1632,7 +1632,7 @@
       ]
     },
     {
-      "series_id": "community|筼筜街道|育秀社区",
+      "series_id": "community|育秀社区",
       "scope": "community",
       "street": "筼筜街道",
       "community": "育秀社区",
@@ -1667,7 +1667,7 @@
       ]
     },
     {
-      "series_id": "community|开元街道|育青社区",
+      "series_id": "community|育青社区",
       "scope": "community",
       "street": "开元街道",
       "community": "育青社区",
@@ -1702,7 +1702,7 @@
       ]
     },
     {
-      "series_id": "community|梧村街道|溪东社区",
+      "series_id": "community|溪东社区",
       "scope": "community",
       "street": "梧村街道",
       "community": "溪东社区",
@@ -1739,7 +1739,7 @@
   ],
   "model_leaderboard": [
     {
-      "series_id": "community|开元街道|美湖社区",
+      "series_id": "community|美湖社区",
       "scope": "community",
       "name": "美湖社区",
       "model": "croston_sba",
@@ -1748,7 +1748,7 @@
       "smape": 1.766
     },
     {
-      "series_id": "community|嘉莲街道|华福社区",
+      "series_id": "community|华福社区",
       "scope": "community",
       "name": "华福社区",
       "model": "croston_sba",
@@ -1757,7 +1757,7 @@
       "smape": 1.903
     },
     {
-      "series_id": "community|筼筜街道|莲岳社区",
+      "series_id": "community|莲岳社区",
       "scope": "community",
       "name": "莲岳社区",
       "model": "croston_sba",
@@ -1766,7 +1766,7 @@
       "smape": 1.127
     },
     {
-      "series_id": "community|筼筜街道|振兴社区",
+      "series_id": "community|振兴社区",
       "scope": "community",
       "name": "振兴社区",
       "model": "naive_last",
@@ -1775,7 +1775,7 @@
       "smape": 0.25
     },
     {
-      "series_id": "community|中华街道|中山社区",
+      "series_id": "community|中山社区",
       "scope": "community",
       "name": "中山社区",
       "model": "poisson_harmonic",
@@ -1784,7 +1784,7 @@
       "smape": 0.851
     },
     {
-      "series_id": "community|莲前街道|观音山社区",
+      "series_id": "community|观音山社区",
       "scope": "community",
       "name": "观音山社区",
       "model": "naive_last",
@@ -1793,7 +1793,7 @@
       "smape": 0.717
     },
     {
-      "series_id": "community|梧村街道|万寿北社区",
+      "series_id": "community|万寿北社区",
       "scope": "community",
       "name": "万寿北社区",
       "model": "croston_sba",
@@ -1802,7 +1802,7 @@
       "smape": 1.018
     },
     {
-      "series_id": "community|开元街道|西边社区",
+      "series_id": "community|西边社区",
       "scope": "community",
       "name": "西边社区",
       "model": "croston_sba",
@@ -1811,7 +1811,7 @@
       "smape": 1.649
     },
     {
-      "series_id": "community|梧村街道|梧村社区",
+      "series_id": "community|梧村社区",
       "scope": "community",
       "name": "梧村社区",
       "model": "croston_sba",
@@ -1820,7 +1820,7 @@
       "smape": 1.785
     },
     {
-      "series_id": "community|莲前街道|前埔北社区",
+      "series_id": "community|前埔北社区",
       "scope": "community",
       "name": "前埔北社区",
       "model": "croston_sba",
@@ -1829,7 +1829,7 @@
       "smape": 0.699
     },
     {
-      "series_id": "community|筼筜街道|湖光社区",
+      "series_id": "community|湖光社区",
       "scope": "community",
       "name": "湖光社区",
       "model": "croston_sba",
@@ -1838,7 +1838,7 @@
       "smape": 0.889
     },
     {
-      "series_id": "community|莲前街道|瑞景社区",
+      "series_id": "community|瑞景社区",
       "scope": "community",
       "name": "瑞景社区",
       "model": "croston_sba",
@@ -1847,7 +1847,7 @@
       "smape": 1.072
     },
     {
-      "series_id": "community|开元街道|育青社区",
+      "series_id": "community|育青社区",
       "scope": "community",
       "name": "育青社区",
       "model": "croston_sba",
@@ -1856,7 +1856,7 @@
       "smape": 0.553
     },
     {
-      "series_id": "community|鼓浪屿街道|内厝社区",
+      "series_id": "community|内厝社区",
       "scope": "community",
       "name": "内厝社区",
       "model": "croston_sba",
@@ -1865,7 +1865,7 @@
       "smape": 1.303
     },
     {
-      "series_id": "community|筼筜街道|岳阳社区",
+      "series_id": "community|岳阳社区",
       "scope": "community",
       "name": "岳阳社区",
       "model": "poisson_harmonic",
@@ -1874,7 +1874,7 @@
       "smape": 1.025
     },
     {
-      "series_id": "community|筼筜街道|官任社区",
+      "series_id": "community|官任社区",
       "scope": "community",
       "name": "官任社区",
       "model": "croston_sba",
@@ -1883,7 +1883,7 @@
       "smape": 1.749
     },
     {
-      "series_id": "community|滨海街道|曾厝垵社区",
+      "series_id": "community|曾厝垵社区",
       "scope": "community",
       "name": "曾厝垵社区",
       "model": "naive_last",
@@ -1892,7 +1892,7 @@
       "smape": 0.417
     },
     {
-      "series_id": "community|嘉莲街道|莲西社区",
+      "series_id": "community|莲西社区",
       "scope": "community",
       "name": "莲西社区",
       "model": "croston_sba",
@@ -1901,7 +1901,7 @@
       "smape": 1.569
     },
     {
-      "series_id": "community|嘉莲街道|长青社区",
+      "series_id": "community|长青社区",
       "scope": "community",
       "name": "长青社区",
       "model": "croston_sba",
@@ -1910,7 +1910,7 @@
       "smape": 1.781
     },
     {
-      "series_id": "community|开元街道|天湖社区",
+      "series_id": "community|天湖社区",
       "scope": "community",
       "name": "天湖社区",
       "model": "croston_sba",
@@ -1919,7 +1919,7 @@
       "smape": 0.974
     },
     {
-      "series_id": "community|鹭江街道|厦禾社区",
+      "series_id": "community|厦禾社区",
       "scope": "community",
       "name": "厦禾社区",
       "model": "croston_sba",
@@ -1928,7 +1928,7 @@
       "smape": 1.799
     },
     {
-      "series_id": "community|鹭江街道|双莲池社区",
+      "series_id": "community|双莲池社区",
       "scope": "community",
       "name": "双莲池社区",
       "model": "croston_sba",
@@ -1937,7 +1937,7 @@
       "smape": 1.12
     },
     {
-      "series_id": "community|厦港街道|巡司顶社区",
+      "series_id": "community|巡司顶社区",
       "scope": "community",
       "name": "巡司顶社区",
       "model": "croston_sba",
@@ -1946,7 +1946,7 @@
       "smape": 0.856
     },
     {
-      "series_id": "community|嘉莲街道|莲花北社区",
+      "series_id": "community|莲花北社区",
       "scope": "community",
       "name": "莲花北社区",
       "model": "damped_trend",
@@ -1955,16 +1955,7 @@
       "smape": 0.877
     },
     {
-      "series_id": "community|嘉莲街道|松柏社区",
-      "scope": "community",
-      "name": "松柏社区",
-      "model": "croston_sba",
-      "mae": 1.194,
-      "rmse": 1.304,
-      "smape": 1.725
-    },
-    {
-      "series_id": "community|莲前街道|莲云社区",
+      "series_id": "community|莲云社区",
       "scope": "community",
       "name": "莲云社区",
       "model": "croston_sba",
@@ -1973,7 +1964,7 @@
       "smape": 1.031
     },
     {
-      "series_id": "community|开元街道|溪岸社区",
+      "series_id": "community|溪岸社区",
       "scope": "community",
       "name": "溪岸社区",
       "model": "croston_sba",
@@ -1982,7 +1973,7 @@
       "smape": 0.75
     },
     {
-      "series_id": "community|筼筜街道|仙岳社区",
+      "series_id": "community|仙岳社区",
       "scope": "community",
       "name": "仙岳社区",
       "model": "croston_sba",
@@ -1991,7 +1982,7 @@
       "smape": 1.836
     },
     {
-      "series_id": "community|梧村街道|溪东社区",
+      "series_id": "community|溪东社区",
       "scope": "community",
       "name": "溪东社区",
       "model": "croston_sba",
@@ -2000,7 +1991,7 @@
       "smape": 1.62
     },
     {
-      "series_id": "community|筼筜街道|屿后社区",
+      "series_id": "community|屿后社区",
       "scope": "community",
       "name": "屿后社区",
       "model": "damped_trend",
@@ -2009,7 +2000,16 @@
       "smape": 1.131
     },
     {
-      "series_id": "community|嘉莲街道|莲花五村社区",
+      "series_id": "community|松柏社区",
+      "scope": "community",
+      "name": "松柏社区",
+      "model": "croston_sba",
+      "mae": 1.403,
+      "rmse": 1.466,
+      "smape": 1.739
+    },
+    {
+      "series_id": "community|莲花五村社区",
       "scope": "community",
       "name": "莲花五村社区",
       "model": "naive_last",
@@ -2018,7 +2018,7 @@
       "smape": 0.932
     },
     {
-      "series_id": "community|筼筜街道|育秀社区",
+      "series_id": "community|育秀社区",
       "scope": "community",
       "name": "育秀社区",
       "model": "croston_sba",
@@ -2027,7 +2027,7 @@
       "smape": 1.454
     },
     {
-      "series_id": "community|莲前街道|前埔南社区",
+      "series_id": "community|前埔南社区",
       "scope": "community",
       "name": "前埔南社区",
       "model": "naive_last",
@@ -2036,7 +2036,7 @@
       "smape": 1.0
     },
     {
-      "series_id": "community|厦港街道|蜂巢山社区",
+      "series_id": "community|蜂巢山社区",
       "scope": "community",
       "name": "蜂巢山社区",
       "model": "naive_last",
@@ -2045,7 +2045,7 @@
       "smape": 0.579
     },
     {
-      "series_id": "community|筼筜街道|一里社区",
+      "series_id": "community|一里社区",
       "scope": "community",
       "name": "一里社区",
       "model": "croston_sba",
@@ -2054,7 +2054,7 @@
       "smape": 1.553
     },
     {
-      "series_id": "community|中华街道|镇海社区",
+      "series_id": "community|镇海社区",
       "scope": "community",
       "name": "镇海社区",
       "model": "croston_sba",
@@ -2063,7 +2063,7 @@
       "smape": 1.524
     },
     {
-      "series_id": "community|莲前街道|金鸡亭社区",
+      "series_id": "community|金鸡亭社区",
       "scope": "community",
       "name": "金鸡亭社区",
       "model": "croston_sba",
@@ -2072,7 +2072,7 @@
       "smape": 0.994
     },
     {
-      "series_id": "community|鹭江街道|小学社区",
+      "series_id": "community|小学社区",
       "scope": "community",
       "name": "小学社区",
       "model": "naive_last",
@@ -2081,7 +2081,7 @@
       "smape": 0.693
     },
     {
-      "series_id": "community|中华街道|仁安社区",
+      "series_id": "community|仁安社区",
       "scope": "community",
       "name": "仁安社区",
       "model": "damped_trend",
@@ -2090,7 +2090,7 @@
       "smape": 0.893
     },
     {
-      "series_id": "community|滨海街道|黄厝社区",
+      "series_id": "community|黄厝社区",
       "scope": "community",
       "name": "黄厝社区",
       "model": "croston_sba",
